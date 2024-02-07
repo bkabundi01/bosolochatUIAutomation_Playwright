@@ -8,7 +8,6 @@ import com.microsoft.playwright.Page;
  * This class requires the use of the locators found in its respective locator class
  */
 public class LoginPageActions extends CommonActions {
-    Page page;
     public LoginPageActions(Page page) {
         super(page);
         this.page = page;

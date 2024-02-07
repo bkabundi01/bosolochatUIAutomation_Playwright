@@ -5,7 +5,6 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
 
 public class HomePageActions extends CommonActions {
-    Page page;
     public HomePageActions(Page page) {
         super(page);
         this.page = page;

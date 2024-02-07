@@ -4,7 +4,6 @@ import LocatorsAndActions.CommonActions;
 import com.microsoft.playwright.Page;
 
 public class RegisterPageActions extends CommonActions {
-    Page page;
     public RegisterPageActions(Page page) {
         super(page);
         this.page = page;
