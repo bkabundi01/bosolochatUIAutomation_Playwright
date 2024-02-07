@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'maven'
+    }
+
     stages {
         stage('GitHub Updated') {
             steps {
@@ -20,14 +24,13 @@ pipeline {
         stage("Publish Extent Report") {
             steps {
                 publishHTML([allowMissing: false,
-                alwaysLinkToLastBuild: false,
-                keepAll: true,
-                reportDir: 'src/test/resources/Reports',
-                reportFiles: 'TestExecutionReport.html',
-                reportName: 'HTML Extent Report',
-                reportTitles: ''])
+                    alwaysLinkToLastBuild: false,
+                    keepAll: true,
+                    reportDir: 'src/test/resources/Reports',
+                    reportFiles: 'TestExecutionReport.html',
+                    reportName: 'HTML Extent Report',
+                    reportTitles: ''])
             }
         }
-
     }
 }
