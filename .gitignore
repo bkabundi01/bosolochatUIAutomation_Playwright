@@ -2,6 +2,7 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+allure-results/
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
@@ -36,7 +37,3 @@ build/
 
 ### Mac OS ###
 .DS_Store
-
-### Project ###
-src/test/resources/TestScreenshots/
-src/test/resources/Reports/
