@@ -17,7 +17,7 @@ pipeline {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
 //                     withCredentials([usernamePassword(credentialsId: 'your-credentials-id', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                         git credentialsId: 'bentGit', url: 'https://github.com/bkabundi01/bosolochatUIAutomation_Playwright', branch: 'main'
-                        sh "mvn clean test -Dsurefire.suiteXmlFiles = src/test/resources/TestSuites/testng_regression.xml"
+                        sh "mvn clean"
 //                     }
                 }
             }
