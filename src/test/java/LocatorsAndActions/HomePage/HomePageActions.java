@@ -7,7 +7,7 @@ import com.microsoft.playwright.options.AriaRole;
 public class HomePageActions extends CommonActions {
     public HomePageActions(Page page) {
         super(page);
-        this.page = page;
+//        this.page = page;
     }
 
     public void clickProfileDropDown() {
