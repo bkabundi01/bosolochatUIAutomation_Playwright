@@ -8,6 +8,7 @@ import com.microsoft.playwright.Page;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.Base64;
 import java.util.Properties;
 
 public class HelperMethods extends BaseTestSetup {
@@ -72,9 +73,11 @@ public class HelperMethods extends BaseTestSetup {
     public static String takeScreenshot(String fileName) {
         String path = testScreenshotPath + "/" + fileName + currentDateTime + ".png";
 
-        getPage().screenshot(new Page.ScreenshotOptions()
-                .setPath(Paths.get(path)));
+//        getPage().screenshot(new Page.ScreenshotOptions()
+//                .setPath(Paths.get(path)));
 
-        return path;
+        //now with base64 buffer image
+        byte[] buffer = getPage().screenshot(new Page.ScreenshotOptions().setPath(Paths.get(path)));
+        return Base64.getEncoder().encodeToString(buffer);
     }
 }

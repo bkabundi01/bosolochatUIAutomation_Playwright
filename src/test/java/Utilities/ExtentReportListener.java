@@ -92,6 +92,8 @@ public class ExtentReportListener extends BaseTestSetup implements ITestListener
     public synchronized void onTestSuccess(ITestResult result) {
         System.out.println((result.getMethod().getMethodName()) + " Has Passed \n-------------------------");
         test.get().pass("[ PASSED ]");
+        test.get().pass(result.getThrowable(),
+                MediaEntityBuilder.createScreenCaptureFromBase64String(takeScreenshot(result.getMethod().getMethodName() + "[ FAILED ]")).build());
 //        logConsoleOutput(result);
         test.get().getModel().setEndTime(getTime(result.getStartMillis()));
     }
@@ -100,14 +102,14 @@ public class ExtentReportListener extends BaseTestSetup implements ITestListener
     public synchronized void onTestFailure(ITestResult result) {
         System.out.println((result.getMethod().getMethodName()) + " Has Failed \n--------------------");
         test.get().fail(result.getThrowable(),
-                MediaEntityBuilder.createScreenCaptureFromPath(takeScreenshot(result.getMethod().getMethodName() + "[ FAILED ]")).build());
+                MediaEntityBuilder.createScreenCaptureFromBase64String(takeScreenshot(result.getMethod().getMethodName() + "[ FAILED ]")).build());
     }
 
     @Override
     public synchronized void onTestSkipped(ITestResult result) {
         System.out.println(result.getMethod().getMethodName() + " Was Skipped \n-------------------------");
         test.get().skip(result.getThrowable(),
-                MediaEntityBuilder.createScreenCaptureFromPath(takeScreenshot(result.getMethod().getMethodName() + " Skipped")).build());
+                MediaEntityBuilder.createScreenCaptureFromBase64String(takeScreenshot(result.getMethod().getMethodName() + " Skipped")).build());
         test.get().getModel().setEndTime(getTime(result.getEndMillis()));
     }
 
