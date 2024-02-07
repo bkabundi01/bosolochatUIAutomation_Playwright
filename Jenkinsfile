@@ -12,7 +12,7 @@ pipeline {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/bkabundi01/bosolochatUIAutomation_Playwright.git'
-                    sh "mvn clean test -Dsurefire.suiteXmlFiles = src/test/resources/TestSuites/testng_LoginTestSuites.xml"
+                    sh "mvn clean test -Dsurefire.suiteXmlFiles = src/test/resources/TestSuites/testng_regression.xml"
                 }
             }
         }
