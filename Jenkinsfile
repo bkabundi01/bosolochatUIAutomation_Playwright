@@ -11,7 +11,7 @@ pipeline {
         stage("Regression Automation Test") {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/bkabundi01/bosolochatUIAutomation_Playwright.git'
+                    git 'https://github.com/bkabundi01/bosolochatUIAutomation_Playwright'
                     sh "mvn clean test -Dsurefire.suiteXmlFiles = src/test/resources/TestSuites/testng_regression.xml"
                 }
             }
