@@ -69,7 +69,7 @@ public class BaseTestSetup {
      */
     @Parameters({"browser"}) //this will grab the parameter from the testng.xml file; parameter preference will be given to that over the config.properties file
     @BeforeTest
-    public Page pageSetUpFactory(String browser) throws IOException {
+    public Page pageSetUpFactory(@Optional String browser) throws IOException {
         props = HelperMethods.initializeProperties();
         String baseUrl = props.getProperty("baseUrl");
         //these next few lines is to grab the width and height of whatever screen is being used
