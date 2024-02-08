@@ -43,7 +43,7 @@ public class LoginPageTests extends BaseTestSetup {
 
     @Test (priority = 2)
     public void bosolochatLoginTest() throws InterruptedException {
-//        page.pause();
+        getPage().pause();
         loginPageActions.writeUsername("TheDon");
         loginPageActions.writePassword("Tester@123");
         loginPageActions.clickLoginBtn();
