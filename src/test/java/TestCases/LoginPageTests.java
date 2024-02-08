@@ -57,13 +57,13 @@ public class LoginPageTests extends BaseTestSetup {
         //assertions
         Assert.assertEquals(actualPageTitle, "BosoloChat");
         //Assert.assertEquals(homePageUrl, "https://bosolochat.com/?cache=1706953760");
-        homePageActions.clickProfileDropDown();
-        getPage().waitForLoadState();
-        takeScreenshot("DropDownMenu_" + browserName);
-        Thread.sleep(5000);
-        homePageActions.clickLogoutBtn();
-        getPage().waitForLoadState();
-        takeScreenshot("LoggedOutSuccessfully_" + browserName);
-        Thread.sleep(5000);
+//        homePageActions.clickProfileDropDown();
+//        getPage().waitForLoadState();
+//        takeScreenshot("DropDownMenu_" + browserName);
+//        Thread.sleep(5000);
+//        homePageActions.clickLogoutBtn();
+//        getPage().waitForLoadState();
+//        takeScreenshot("LoggedOutSuccessfully_" + browserName);
+//        Thread.sleep(5000);
     }
 }

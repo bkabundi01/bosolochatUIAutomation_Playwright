@@ -2,6 +2,7 @@ package LocatorsAndActions.LoginPage;
 
 import LocatorsAndActions.CommonActions;
 import com.microsoft.playwright.Page;
+import lombok.extern.java.Log;
 
 
 /**
@@ -13,6 +14,8 @@ public class LoginPageActions extends CommonActions {
 //        this.page = page;
     }
 
+//***********************************************************************************************************************
+//These methods are for interacting with the individual elements of the page
     public void writeUsername(String userName) {
         page.fill(LoginPageLocators.USERNAME_FIELD, userName);
     }
@@ -27,4 +30,12 @@ public class LoginPageActions extends CommonActions {
     public void clickTwitterBtn() {page.click(LoginPageLocators.TWITTER_BTN);}
     public void clickRegisterBtn() {page.click(LoginPageLocators.REGISTER);}
     public void clickForgotPasswordBtn() {page.click(LoginPageLocators.FORGOT_PASSWORD_BTN);}
+
+//**********************************************************************************************************************
+//These will be methods to navigate to different pages from the LoginPage. It can be used by other pages
+    public void loginAndNavigateToHomePage(String username, String password) {
+        writeUsername(username);
+        writePassword(password);
+        clickLoginBtn();
+    }
 }
