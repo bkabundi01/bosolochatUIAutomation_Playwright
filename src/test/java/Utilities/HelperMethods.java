@@ -45,8 +45,6 @@ public class HelperMethods extends BaseTestSetup {
         switch (browserName.toLowerCase()) {
             case "chromium": {
                 browser = getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setHeadless(headless));
-//                browser = BaseSetup.playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(headless));
-//                browserThreadLocal.set(getPlaywright().chromium().launch(new BrowserType.LaunchOptions().setHeadless(headless)));
                 break;
             }
             case "chrome": {
@@ -72,9 +70,6 @@ public class HelperMethods extends BaseTestSetup {
 
     public static String takeScreenshot(String fileName) {
         String path = testScreenshotPath + "/" + fileName + currentDateTime + ".png";
-
-//        getPage().screenshot(new Page.ScreenshotOptions()
-//                .setPath(Paths.get(path)));
 
         //now with base64 buffer image
         byte[] buffer = getPage().screenshot(new Page.ScreenshotOptions().setPath(Paths.get(path)));

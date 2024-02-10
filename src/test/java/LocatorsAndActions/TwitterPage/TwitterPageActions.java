@@ -1,4 +1,11 @@
 package LocatorsAndActions.TwitterPage;
 
-public class TwitterPageActions {
+import LocatorsAndActions.CommonActions;
+import com.microsoft.playwright.Page;
+
+public class TwitterPageActions extends CommonActions {
+
+    public TwitterPageActions(Page page) {
+        super(page);
+    }
 }

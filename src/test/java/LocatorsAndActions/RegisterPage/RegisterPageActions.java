@@ -6,7 +6,6 @@ import com.microsoft.playwright.Page;
 public class RegisterPageActions extends CommonActions {
     public RegisterPageActions(Page page) {
         super(page);
-//        this.page = page;
     }
 
     public String readCreateYourBosoloChatAccountMessage() {

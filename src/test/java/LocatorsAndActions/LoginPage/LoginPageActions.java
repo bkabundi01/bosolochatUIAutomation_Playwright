@@ -2,7 +2,6 @@ package LocatorsAndActions.LoginPage;
 
 import LocatorsAndActions.CommonActions;
 import com.microsoft.playwright.Page;
-import lombok.extern.java.Log;
 
 
 /**
@@ -11,7 +10,7 @@ import lombok.extern.java.Log;
 public class LoginPageActions extends CommonActions {
     public LoginPageActions(Page page) {
         super(page);
-//        this.page = page;
+        this.page = page;
     }
 
 //***********************************************************************************************************************
@@ -33,6 +32,12 @@ public class LoginPageActions extends CommonActions {
 
 //**********************************************************************************************************************
 //These will be methods to navigate to different pages from the LoginPage. It can be used by other pages
+
+    /**
+     * This method is to log into BosoloChat
+     * @param username
+     * @param password
+     */
     public void loginAndNavigateToHomePage(String username, String password) {
         writeUsername(username);
         writePassword(password);

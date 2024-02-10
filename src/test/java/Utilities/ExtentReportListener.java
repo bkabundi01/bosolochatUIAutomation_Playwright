@@ -7,6 +7,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.microsoft.playwright.Page;
 import org.testng.ISuiteListener;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -23,12 +24,12 @@ import static Utilities.HelperMethods.takeScreenshot;
 
 
 public class ExtentReportListener extends BaseTestSetup implements ITestListener, ISuiteListener{
-
     private static final String OUTPUT_FOLDER = "src/test/resources/Reports";
-    private static final String FILE_NAME = "/TestExecutableReport_" + currentDateTime + ".html";
 
+    private static final String FILE_NAME = "/TestExecutableReport_" + currentDateTime + ".html";
     private static final ExtentReports extent = init();
 //    public static ThreadLocal<ExtentTest> test = new ThreadLocal<ExtentTest>();
+
     private static ExtentReports extentReports;
 
     private static ExtentReports init() {
@@ -44,6 +45,7 @@ public class ExtentReportListener extends BaseTestSetup implements ITestListener
         }
 
         extentReports = new ExtentReports();
+
         //saving the report to the correct directory
         ExtentSparkReporter reporter = new ExtentSparkReporter(OUTPUT_FOLDER + FILE_NAME);
         reporter.config().setReportName("BosoloChat Web Automation Report Results");

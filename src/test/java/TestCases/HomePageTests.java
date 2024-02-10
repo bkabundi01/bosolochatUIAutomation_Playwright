@@ -6,6 +6,6 @@ import org.testng.annotations.Test;
 public class HomePageTests extends BaseTestSetup {
     @Test
     public void navigateToHomePage() {
-        loginPageActions.loginAndNavigateToHomePage("TheDon", "Tester@123");
+        allActionClasses.loginPageActions().loginAndNavigateToHomePage("TheDon", "Tester@123");
     }
 }

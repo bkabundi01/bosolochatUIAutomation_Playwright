@@ -7,7 +7,6 @@ import com.microsoft.playwright.options.AriaRole;
 public class HomePageActions extends CommonActions {
     public HomePageActions(Page page) {
         super(page);
-//        this.page = page;
     }
 
     public void clickProfileDropDown() {
@@ -16,7 +15,11 @@ public class HomePageActions extends CommonActions {
 
     public void clickLogoutBtn() {
         page.locator(HomePageLocators.LOGOUT_BTN).click();
-//        page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName(HomePageLocators.LOGOUT_BTN)).click();
+    }
+
+    public void logOutOfBosoloChat() {
+        clickProfileDropDown();
+        clickLogoutBtn();
     }
 
 
