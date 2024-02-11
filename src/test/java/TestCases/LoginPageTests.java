@@ -57,9 +57,9 @@ public class LoginPageTests extends BaseTestSetup {
     public void navigateToSignUpPage() throws InterruptedException {
         allActionClasses.loginPageActions().clickOnElement(LoginPageLocators.REGISTER);
         getPage().waitForLoadState();
-//        String createBosolochatAccountMessage = registerPageActions.readCreateYourBosoloChatAccountMessage();
-//        Assert.assertEquals(createBosolochatAccountMessage, "Create your BosoloChat Account!");
-//        registerPageActions.navigateBackToLoginPage();
+        String createBosolochatAccountMessage = allActionClasses.registerPageActions().readCreateYourBosoloChatAccountMessage();
+        Assert.assertEquals(createBosolochatAccountMessage, "Create your BosoloChat Account!");
+        allActionClasses.registerPageActions().navigateBackToLoginPage();
         getPage().waitForLoadState();
         Thread.sleep(5000);
     }

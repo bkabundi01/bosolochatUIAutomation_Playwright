@@ -7,7 +7,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import com.microsoft.playwright.Page;
 import org.testng.ISuiteListener;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -95,8 +94,7 @@ public class ExtentReportListener extends BaseTestSetup implements ITestListener
         System.out.println((result.getMethod().getMethodName()) + " Has Passed \n-------------------------");
         test.get().pass("[ PASSED ]");
         test.get().pass(result.getThrowable(),
-                MediaEntityBuilder.createScreenCaptureFromBase64String(takeScreenshot(result.getMethod().getMethodName() + "[ FAILED ]")).build());
-//        logConsoleOutput(result);
+                MediaEntityBuilder.createScreenCaptureFromBase64String(takeScreenshot(result.getMethod().getMethodName() + "[ PASSED ]")).build());
         test.get().getModel().setEndTime(getTime(result.getStartMillis()));
     }
 
@@ -111,7 +109,7 @@ public class ExtentReportListener extends BaseTestSetup implements ITestListener
     public synchronized void onTestSkipped(ITestResult result) {
         System.out.println(result.getMethod().getMethodName() + " Was Skipped \n-------------------------");
         test.get().skip(result.getThrowable(),
-                MediaEntityBuilder.createScreenCaptureFromBase64String(takeScreenshot(result.getMethod().getMethodName() + " Skipped")).build());
+                MediaEntityBuilder.createScreenCaptureFromBase64String(takeScreenshot(result.getMethod().getMethodName() + " [ SKIPPED ]")).build());
         test.get().getModel().setEndTime(getTime(result.getEndMillis()));
     }
 
