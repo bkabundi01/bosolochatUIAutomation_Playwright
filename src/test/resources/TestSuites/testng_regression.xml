@@ -15,11 +15,6 @@
         </classes>
     </test>
 
-
-    //body/div[3]/div[2]/div[1]/div[1]/div[2]/div[7]/div[1]/div[1]/div[1]
-    //body/div[3]/div[2]/div[1]/div[1]/div[2]/div[7]/div[1]/div[1]/div[2]
-
-
     <test name="BosoloChat Login Test_Edge">
         <parameter name="browser" value="edge"/>
         <classes>
