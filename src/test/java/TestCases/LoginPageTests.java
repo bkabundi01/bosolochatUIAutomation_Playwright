@@ -59,6 +59,7 @@ public class LoginPageTests extends BaseTestSetup {
         getPage().waitForLoadState();
         String createBosolochatAccountMessage = allActionClasses.registerPageActions().readCreateYourBosoloChatAccountMessage();
         Assert.assertEquals(createBosolochatAccountMessage, "Create your BosoloChat Account!");
+//        allActionClasses.registerPageActions().navigateBackToLoginPage();
         getPage().goBack();
         getPage().waitForLoadState();
         Thread.sleep(5000);
