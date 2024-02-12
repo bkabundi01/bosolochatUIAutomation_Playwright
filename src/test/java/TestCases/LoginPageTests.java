@@ -59,7 +59,8 @@ public class LoginPageTests extends BaseTestSetup {
         getPage().waitForLoadState();
         String createBosolochatAccountMessage = allActionClasses.registerPageActions().readCreateYourBosoloChatAccountMessage();
         Assert.assertEquals(createBosolochatAccountMessage, "Create your BosoloChat Account!");
-        allActionClasses.registerPageActions().navigateBackToLoginPage();
+//        allActionClasses.registerPageActions().navigateBackToLoginPage();
+        getPage().goBack();
         getPage().waitForLoadState();
         Thread.sleep(5000);
     }
@@ -75,7 +76,7 @@ public class LoginPageTests extends BaseTestSetup {
         getPage().waitForLoadState();
         actualPageTitle = allActionClasses.loginPageActions().getPageTitle();
         Assert.assertEquals(actualPageTitle, "Twitter / Authorize an application");
-//        registerPageActions.navigateBackToLoginPage();
+        getPage().goBack();
         Thread.sleep(5000);
     }
 }
