@@ -2,8 +2,10 @@ package Base;
 
 import LocatorsAndActions.HomePage.HomePageActions;
 import LocatorsAndActions.LoginPage.LoginPageActions;
+import LocatorsAndActions.NavBar.NavBarActions;
 import LocatorsAndActions.ProfilePage.ProfilePageActions;
 import LocatorsAndActions.RegisterPage.RegisterPageActions;
+import LocatorsAndActions.SideBars.SideBarsActions;
 import LocatorsAndActions.TwitterPage.TwitterPageActions;
 import com.microsoft.playwright.Page;
 
@@ -38,4 +40,8 @@ public class ActionClasses_Initialization {
     public ProfilePageActions profilePageActions() {
         return new ProfilePageActions(page);
     }
+
+    public NavBarActions navBarActions(){return new NavBarActions(page);}
+
+    public SideBarsActions sideBarsActions(){return new SideBarsActions(page);}
 }

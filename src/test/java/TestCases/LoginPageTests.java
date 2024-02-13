@@ -42,7 +42,7 @@ public class LoginPageTests extends BaseTestSetup {
         //assertions
         Assert.assertEquals(actualPageTitle, "BosoloChat");
         //Assert.assertEquals(homePageUrl, "https://bosolochat.com/?cache=1706953760");
-        allActionClasses.homePageActions().logOutOfBosoloChat();
+        allActionClasses.navBarActions().logOutOfBosoloChat();
         getPage().waitForLoadState();
         takeScreenshot("LoggedOutSuccessfully_" + browserName);
 //        Assert.assertEquals(actualPageUrl, "https://bosolochat.com/welcome");
@@ -59,7 +59,6 @@ public class LoginPageTests extends BaseTestSetup {
         getPage().waitForLoadState();
         String createBosolochatAccountMessage = allActionClasses.registerPageActions().readCreateYourBosoloChatAccountMessage();
         Assert.assertEquals(createBosolochatAccountMessage, "Create your BosoloChat Account!");
-//        allActionClasses.registerPageActions().navigateBackToLoginPage();
         getPage().goBack();
         getPage().waitForLoadState();
         Thread.sleep(5000);
