@@ -3,6 +3,8 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 allure-results
+src/test/java/TestCases/TestingNewLocators.java
+src/test/java/Base/Practice.java
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
