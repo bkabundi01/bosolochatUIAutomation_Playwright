@@ -23,6 +23,4 @@ public interface NavBarLocators {
     String GENERAL_SETTING_BTN = "//ul[@class = 'dropdown-menu ani-acc-menu']/li[33]/a[1]";
     String LOGOUT_BTN = "//ul[@class = 'dropdown-menu ani-acc-menu']/li[39]/a[1]";
     String NIGHT_MODE_BTN = "//a[@id='night_mode_toggle']";
-
-
 }
