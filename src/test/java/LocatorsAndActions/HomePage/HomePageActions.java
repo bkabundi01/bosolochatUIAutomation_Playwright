@@ -9,18 +9,4 @@ public class HomePageActions extends CommonActions {
         super(page);
     }
 
-    public void clickProfileDropDown() {
-        page.locator(HomePageLocators.PROFILE_DROPDOWN).nth(0).click();
-    }
-
-    public void clickLogoutBtn() {
-        page.locator(HomePageLocators.LOGOUT_BTN).click();
-    }
-
-    public void logOutOfBosoloChat() {
-        clickProfileDropDown();
-        clickLogoutBtn();
-    }
-
-
 }
