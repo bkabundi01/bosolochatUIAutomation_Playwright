@@ -1,7 +1,5 @@
 package LocatorsAndActions.HomePage;
 
-import com.microsoft.playwright.Locator;
-
 public interface HomePageLocators {
     //RIGHT SIDEBAR
     String PROFILE_PIC_STATUS = "//img[@class = 'seen_story see_all_stories']";
