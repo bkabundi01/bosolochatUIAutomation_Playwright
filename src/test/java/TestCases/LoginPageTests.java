@@ -70,7 +70,7 @@ public class LoginPageTests extends BaseTestSetup {
      */
     @Test (priority = 4)
     public void navigateToLoginWithTwitterPage() throws InterruptedException {
-//       // page.pause();
+//        page.pause();
         allActionClasses.loginPageActions().clickOnElement(LoginPageLocators.TWITTER_BTN);
         getPage().waitForLoadState();
         actualPageTitle = allActionClasses.loginPageActions().getPageTitle();
